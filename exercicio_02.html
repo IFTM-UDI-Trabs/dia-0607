@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercício 2</title>
+	<meta charset="utf-8">
+</head>
+<body id="id">
+
+	<form action="" method="POST" id="form" onsubmit="return verifica()">
+		<input type="text" id="usuario" name="login" placeholder="Escreva aqui seu usuário"><br>
+		<input type="password" id="pass" name="senha" placeholder="Escreva aqui sua senha"><br>
+		<input type="password" id="confirm" name="confirm" placeholder="Confirme sua senha"><br>
+		<button type="submit">Entrar</button>
+	</form>
+
+	<script type="text/javascript">
+		function verifica(){
+
+			var usuario = document.getElementById("usuario").value;
+
+			var senha = document.getElementById("pass").value;
+
+			var confirm = document.getElementById("confirm").value;
+
+
+			var mensagem = "";
+			var erro = false;
+
+
+			if (usuario == ""){
+				erro = true;
+				mensagem += "O campo Usuário não pode estar vazio;\n"
+			}
+
+			if (senha == ""){
+				erro = true;
+				mensagem += "O campo Senha não pode estar vazio;\n"
+			} else if (senha.length < 6 || senha.length > 10){
+				erro = true;
+				mensagem += "O campo Senha deve ter de 6 a 10 dígitos;\n"
+			}
+
+			if (confirm == ""){
+				erro = true;
+				mensagem += "O campo Confirmar Senha não pode estar vazio;\n"
+			} else if (confirm.length < 6 || confirm.length > 10){
+				erro = true;
+				mensagem += "O campo Confirmar Senha deve ter de 6 a 10 dígitos;\n"
+			} else if (confirm != senha){
+				erro = true;
+				mensagem += "Os campos Senha e Confirmar Senha não estão iguais!\n"
+			}
+
+			if (erro == true){
+				alert(mensagem);
+			} else {
+				alert("Deu certo!")
+			}
+
+		}
+	</script>
+
+</body>
+</html>

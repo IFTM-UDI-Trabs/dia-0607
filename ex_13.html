@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercício 13</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+	<form name="form1" id="form1" method="post" action="">
+		
+		<input type="text" name="numero1" placeholder="Digite um número"><br>
+		<input type="text" name="numero2" placeholder="Digite um número"><br>
+		<input type="text" name="numero3" placeholder="Digite um número"><br>
+
+		<button onclick="manda()">Enviar Números</button>
+
+	</form>
+
+
+	<script type="text/javascript">
+
+		function manda(){
+			
+			var numero1 = parseFloat(document.getElementsByName("numero1")[0].value);
+			var numero2 = parseFloat(document.getElementsByName("numero2")[0].value);
+			var numero3 = parseFloat(document.getElementsByName("numero3")[0].value);
+
+			// numero1 = numero1.value;
+			// numero2 = numero2.value;
+			// numero3 = numero3.value;
+
+			// numero1 = parseFloat(numero1);
+			// numero2 = parseFloat(numero2);
+			// numero3 = parseFloat(numero3);
+
+			document.write("<table width=\"80%\" border=\"1px\" cellspacing=\"0\">");
+
+			document.write("<tr>")
+			document.write("<td>Número digitados</td>")
+			document.write("<td align=\"center\">"+ numero1 +"</td>")
+			document.write("<td align=\"center\">"+ numero2 +"</td>")
+			document.write("<td align=\"center\">"+ numero3 +"</td>")
+			document.write("</tr>")
+
+			document.write("<tr>")
+			document.write("<td> A soma dos números é: </td>")
+			document.write("<td colspan=\"3\" align=\"center\">"+ (numero1 + numero2 + numero3) +"</td>")
+			document.write("</tr>")
+
+			document.write("<tr>")
+			document.write("<td> A média dos números é: </td>")
+			document.write("<td colspan=\"3\" align=\"center\">"+ ((numero1 + numero2 + numero3) / 3) +"</td>")
+			document.write("</tr>")
+
+			document.write("<tr>")
+			document.write("<td> O produto destes números é: </td>")
+			document.write("<td colspan=\"3\" align=\"center\">"+ (numero1 * numero2 * numero3) +"</td>")
+			document.write("</tr>")
+
+			document.write("<tr>")
+			document.write("<td> O maior número é: </td>")
+
+			if ( numero1 > numero2 && numero1 > numero3){
+				document.write("<td colspan=\"3\" align=\"center\">"+ numero1 +"</td>")
+				document.write("</tr>")
+			}
+			else if ( numero2 > numero1 && numero2 > numero3){
+				document.write("<td colspan=\"3\" align=\"center\">"+ numero2 +"</td>")
+				document.write("</tr>")
+			}
+			else {
+				document.write("<td colspan=\"3\" align=\"center\">"+ numero3 +"</td>")
+				document.write("</tr>")
+			}
+
+			document.write("<tr>")
+			document.write("<td> O menor número é: </td>")
+
+			if ( numero1 < numero2 && numero1 < numero3){
+				document.write("<td colspan=\"3\" align=\"center\">"+ numero1 +"</td>")
+				document.write("</tr>")
+			}
+			else if ( numero2 < numero1 && numero2 < numero3){
+				document.write("<td colspan=\"3\" align=\"center\">"+ numero2 +"</td>")
+				document.write("</tr>")
+			}
+			else {
+				document.write("<td colspan=\"3\" align=\"center\">"+ numero3 +"</td>")
+				document.write("</tr>")
+			}
+
+			document.write("</table>");
+
+		}
+		
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercício 4</title>
+	<meta charset="utf-8">
+</head>
+<body id="id">
+
+	<form>
+		<input type="text" name="nome" placeholder="Digite seu nome:"><br>
+		<label><input type="radio" value="1" name="pessoa" onclick="desabilita(this.value)">Pessoa Física</label><br>
+		<label><input type="radio" value="2" name="pessoa" onclick="desabilita(this.value)">Pessoa Jurídica</label><br>
+		<input id="cpf" type="text" name="nome" placeholder="Digite seu CPF:"><br>
+		<input id="cnpj" type="text" name="nome" placeholder="Digite seu CNPJ:"><br>
+		<input id="data" onkeypress="return SomenteNumero(event)"type="text" name="nome" placeholder="Digite sua Data de Nascimento:"><br>
+		<input type="text" name="nome" placeholder="Digite seu endereço:"><br>
+		<input id="cep" onkeypress="return SomenteNumero(event)" type="text" name="nome" placeholder="Digite seu CEP:"><br>
+		<input type="text" name="nome" placeholder="Digite seu Telefone:"><br>
+		<input type="text" name="nome" placeholder="Digite seu Email:"><br>
+	</form>
+
+	<script type="text/javascript">
+		function desabilita(valor){
+
+			if (valor == 1){
+				document.getElementById("cpf").disabled = false;
+				document.getElementById("cnpj").disabled = true;
+				document.getElementById("data").disabled = false;
+			} else if (valor == 2){
+				document.getElementById("cpf").disabled = true;
+				document.getElementById("cnpj").disabled = false;
+				document.getElementById("data").disabled = true;
+			}
+		}
+
+
+
+
+		function SomenteNumero(e){
+    		var tecla=(window.event)?event.keyCode:e.which;   
+    		if((tecla>47 && tecla<58)) return true;
+		    else{
+		    	if (tecla==8 || tecla==0) return true;
+			else  return false;
+		    }
+
+
+			
+		}
+	</script>
+
+</body>
+</html>

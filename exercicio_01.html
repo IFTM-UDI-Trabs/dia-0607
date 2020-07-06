@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercício 1</title>
+	<meta charset="utf-8">
+
+	<style type="text/css">
+		.btn{
+			width: 400px;
+			padding: 5px 0;
+		}
+		.aba{
+			width: 400px;
+			height: 400px;
+		}
+	</style>
+</head>
+<body id="id">
+
+	<form id="form">
+		<button type="button" onclick="muda_cor('red')" class="btn">Clique aqui para mudar a cor do fundo para vermelho</button><br><br>
+		<button type="button" onclick="muda_cor('green')" class="btn">Clique aqui para mudar a cor do fundo para verde</button><br><br>
+		<button type="button" onclick="muda_cor('blue')" class="btn">Clique aqui para mudar a cor do fundo para azul</button><br><br>
+		<button type="button" onclick="muda_cor('yellow')" class="btn">Clique aqui para mudar a cor do fundo para amarelo</button>
+	</form>
+
+	<!-- Caso os botões estejam dentro de um formulário, a página irá atualizar e o javascript não funcionará da maneira que o senhor deseja! -->
+
+	<script type="text/javascript">
+		function muda_cor(cor){
+
+
+			var x = document.getElementById("id").style.backgroundColor = cor;
+		}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercício 3</title>
+	<meta charset="utf-8">
+</head>
+<body id="id">
+
+
+	<form action="" method="POST" id="form">
+		<button type="button" onclick="invert()">Inverter</button>
+		<input class="nome" type="text" name="nome_um">
+		<input class="nome" type="text" name="nome_dois">
+		<input class="nome" type="text" name="nome_tres">
+		<input class="nome" type="text" name="nome_quatro">
+		<input class="nome" type="text" name="nome_cinco">
+	</form>
+
+	<script type="text/javascript">
+		function invert(){
+
+			var nome_1 = document.getElementsByClassName("nome")[0].value;
+
+			console.log(nome_1)
+
+			var nome_2 = document.getElementsByClassName("nome")[1].value;
+
+			var nome_3 = document.getElementsByClassName("nome")[2].value;
+
+			var nome_4 = document.getElementsByClassName("nome")[3].value;
+
+			var nome_5 = document.getElementsByClassName("nome")[4].value;
+
+
+			var nomes = [nome_1, nome_2, nome_3, nome_4, nome_5];
+
+			console.log(nomes)
+			
+			var nmr = 0;
+
+			var selecao = document.getElementsByClassName("nome");
+			for (var i = (nomes.length - 1); i >= 0; i--) {
+
+
+				console.log(selecao)
+				selecao[nmr].value = nomes[i];
+				console.log(selecao)
+
+				nmr += 1;
+			}
+
+		}
+	</script>
+
+</body>
+</html>
